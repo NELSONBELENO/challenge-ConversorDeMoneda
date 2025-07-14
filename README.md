@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/NELSONBELENO/challenge-ConversorDeMoneda/blob/main/Badge-Conversor.png" alt="Badge Spring" width="300"/>
+</p>
+
 # Proyecto Conversor de Moneda
 
 ## Propósito del Proyecto
