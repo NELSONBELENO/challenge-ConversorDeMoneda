@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Monedas</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <style>
+        .historial-item {
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .historial-item:hover {
+            background-color: #f0f8ff;
+        }
+
+        .help-icon {
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #007bff;
+            margin-left: 10px;
+        }
+
+        .custom-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-label {
+            color: #495057;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #4e555b;
+        }
+
+        .alert-info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border-color: #bee5eb;
+        }
+
+        .resultados {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .historial {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 576px) {
+            .custom-container {
+                padding: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid py-5">
+    <div class="custom-container">
+        <h1 class="mb-4 text-center text-primary">Conversor de Monedas</h1>
+        <form id="conversionForm" class="mb-4">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <label for="cantidad" class="form-label">Cantidad:</label>
+                    <input type="number" class="form-control" id="cantidad" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="monedaOrigen" class="form-label">De:</label>
+                    <select id="monedaOrigen" class="form-select">
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="monedaDestino" class="form-label">A:</label>
+                    <select id="monedaDestino" class="form-select">
+                    </select>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary w-48">Convertir</button>
+                <button type="button" onclick="limpiarFormulario()" class="btn btn-secondary w-48">Limpiar</button>
+            </div>
+        </form>
+
+        <div class="resultados mb-4">
+            <h2 class="h4">Resultado:</h2>
+            <div id="resultado" class="alert alert-info">Esperando conversión...</div>
+        </div>
+
+        <div class="historial">
+            <h2 class="h4 d-inline-block">Historial</h2>
+            <i class="fas fa-question-circle help-icon" data-bs-toggle="tooltip" data-bs-placement="right" title="El historial muestra tus conversiones recientes. Haz clic en cualquier entrada para cargar esa conversión."></i>
+            <div id="historial" class="list-group mt-2">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="/js/FuncionesConversor.js"></script>
+</body>
+</html>
